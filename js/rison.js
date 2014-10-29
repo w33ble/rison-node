@@ -1,16 +1,26 @@
-
-
+// Uses CommonJS, AMD or browser globals to create a module.
+// Based on: https://github.com/umdjs/umd/blob/master/templates/returnExports.js
+(function (root, factory) {
+    if (typeof exports === 'object' && typeof module !== 'undefined') {
+        // CommonJS
+        module.exports = factory();
+    } else if (typeof define === 'function' && define.amd) {
+        // AMD. Register as an anonymous module.
+        define([], factory);
+    } else {
+        // Browser globals
+        root.rison = factory();
+    }
+}(typeof self !== 'undefined' ? self : this, function () {
+var rison = {};
 
 //////////////////////////////////////////////////
 //
 //  the stringifier is based on
 //    http://json.org/json.js as of 2006-04-28 from json.org
-//  the parser is based on 
+//  the parser is based on
 //    http://osteele.com/sources/openlaszlo/json
 //
-
-if (typeof rison == 'undefined')
-    window.rison = {};
 
 /**
  *  rules for an uri encoder that is more tolerant than encodeURIComponent
@@ -39,7 +49,7 @@ rison.uri_ok = {  // ok in url paths and in form query args
  * punctuation characters that are legal inside ids.
  */
 // this var isn't actually used
-//rison.idchar_punctuation = "_-./~";  
+//rison.idchar_punctuation = "_-./~";
 
 (function () {
     var l = [];
@@ -72,7 +82,7 @@ rison.not_idstart = "-0123456789";
 
 
 (function () {
-    var idrx = '[^' + rison.not_idstart + rison.not_idchar + 
+    var idrx = '[^' + rison.not_idstart + rison.not_idchar +
                '][^' + rison.not_idchar + ']*';
 
     rison.id_ok = new RegExp('^' + idrx + '$');
@@ -296,8 +306,8 @@ rison.decode_array = function(r) {
  * construct a new parser object for reuse.
  *
  * @constructor
- * @class A Rison parser class.  You should probably 
- *        use rison.decode instead. 
+ * @class A Rison parser class.  You should probably
+ *        use rison.decode instead.
  * @see rison.decode
  */
 rison.parser = function (errcb) {
@@ -338,7 +348,7 @@ rison.parser.prototype.error = function (message) {
     this.message = message;
     return undefined;
 }
-    
+
 rison.parser.prototype.readValue = function () {
     var c = this.next();
     var fn = c && this.table[c];
@@ -504,3 +514,7 @@ rison.parser.prototype.next = function () {
     return c;
 };
 
+return rison;
+
+// End of UMD module wrapper
+}));
