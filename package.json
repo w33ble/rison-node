@@ -10,13 +10,16 @@
   },
   "main": "build/rison.js",
   "files": [
-    "build"
+    "build",
+    "LICENSE.md",
+    "README.md"
   ],
   "scripts": {
     "clean": "if [ -d build ]; then rm -r build; fi",
     "build": "npm run clean; mkdir build; (echo 'var rison = {};'; cat js/rison.js; echo 'return rison;') | umd rison > build/rison.js",
     "prepublish": "npm run test && npm run build",
-    "test": "npm run build; tape tests/*.js"
+    "pretest": "npm run build",
+    "test": "tape tests/*.js"
   },
   "devDependencies": {
     "tape": "^4.2.2",
