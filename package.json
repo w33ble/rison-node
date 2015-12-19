@@ -12,7 +12,8 @@
   "files": [
     "build",
     "LICENSE.md",
-    "README.md"
+    "README.md",
+    "CHANGELOG.md"
   ],
   "scripts": {
     "clean": "if [ -d build ]; then rm -r build; fi",
