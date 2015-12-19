@@ -1,3 +1,7 @@
+# 0.3.0 (2015-12-18)
+
+- Handle Date type values via `.toJSON()`
+
 # 0.2.0 (2015-12-18)
 
 - Act like JSON.stringify, ignore undefined values
