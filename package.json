@@ -1,6 +1,6 @@
 {
   "name": "rison-node",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "author": "Nanonid (https://github.com/Nanonid)",
   "description": "data serialization format optimized for compactness in URIs",
   "license": "Apache-2.0",
