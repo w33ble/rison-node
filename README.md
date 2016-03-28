@@ -1,7 +1,7 @@
 rison
 =====
 
-Rison mirror (http://mjtemplate.org/examples/rison.html)
+Rison mirror of now dead site (http://mjtemplate.org/examples/rison.html)
 
 
 # Rison - Compact Data in URIs
@@ -16,7 +16,7 @@ You can skip straight to some examples, or read on for more background.
 
 Downloads:
 
-  * [rison.js](../../dist/mjt-0.9.2/rison.js) includes a Javascript Rison encoder (based on [Douglas Crockford](http://json.org)'s [json.js](http://json.org/json.js)) and decoder (based on [Oliver Steele](http://osteele.com)'s [JSON for OpenLaszlo](http://osteele.com/sources/openlaszlo/json/)). 
+  * [rison.js](./js/rison.js) includes a Javascript Rison encoder (based on [Douglas Crockford](http://json.org)'s [json.js](http://json.org/json.js)) and decoder (based on [Oliver Steele](http://osteele.com)'s [JSON for OpenLaszlo](http://osteele.com/sources/openlaszlo/json/)). 
   * [rison.py](http://freebase-python.googlecode.com/svn/trunk/freebase/rison.py) contains a decoder in Python. 
   * [Tim Fletcher](http://tfletcher.com/dev/) has implemented [Rison in Ruby](http://rison.rubyforge.org/) including both encoder and decoder. 
 
@@ -49,7 +49,7 @@ rison.encode_array(["A", "B", {supportsObjects: true}]);
 
 // Decode with: rison.decode, rison.decode_object, rison.decode_array
 // Example:
-rison.encode('(any:json,yes:!t)');
+rison.decode('(any:json,yes:!t)');
 // { any: 'json', yes: true }
 ```
 
