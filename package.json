@@ -4,7 +4,8 @@
   "authors": [
     "Nanonid (https://github.com/Nanonid)",
     "Spencer Alger (https://github.com/spalger)",
-    "Joe Fleming (https://github.com/w33ble)"
+    "Joe Fleming (https://github.com/w33ble)",
+    "Court Ewing (https://github.com/epixa)"
   ],
   "description": "data serialization format optimized for compactness in URIs",
   "license": "Apache-2.0",
