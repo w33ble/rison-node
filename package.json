@@ -8,7 +8,8 @@
     "Court Ewing (https://github.com/epixa)",
     "Jonas Finnemann Jensen (https://github.com/jonasfj)",
     "Sam Presnal",
-    "bryanrideshark (https://github.com/bryanrideshark)"
+    "bryanrideshark (https://github.com/bryanrideshark)",
+    "Casey Webb (https://github.com/caseyWebb)"
   ],
   "description": "data serialization format optimized for compactness in URIs",
   "license": "Apache-2.0",
