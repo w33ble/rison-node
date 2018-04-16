@@ -27,12 +27,20 @@
     "singleQuote": true,
     "trailingComma": "es5"
   },
+  "auto-changelog": {
+    "output": "CHANGELOG.md",
+    "template": "cltemplate.hbs",
+    "ignoreCommitPattern": "(add|Add).+(author|Author|contributor|Contributor)"
+  },
   "scripts": {
     "preversion": "npm run test",
+    "version": "npm run changelog",
+    "changelog": "auto-changelog",
     "test": "npm run lint && tape tests/*.js",
     "lint": "eslint \"js/*.js\" \"tests/*.js\""
   },
   "devDependencies": {
+    "auto-changelog": "^1.4.6",
     "eslint": "^4.19.1",
     "eslint-config-prettier": "^2.9.0",
     "eslint-plugin-prettier": "^2.6.0",
