@@ -23,11 +23,20 @@
     "README.md",
     "CHANGELOG.md"
   ],
+  "prettier": {
+    "singleQuote": true,
+    "trailingComma": "es5"
+  },
   "scripts": {
     "preversion": "npm run test",
-    "test": "tape tests/*.js"
+    "test": "npm run lint && tape tests/*.js",
+    "lint": "eslint \"js/*.js\" \"tests/*.js\""
   },
   "devDependencies": {
+    "eslint": "^4.19.1",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-plugin-prettier": "^2.6.0",
+    "prettier": "^1.12.0",
     "tape": "^4.2.2"
   }
 }
