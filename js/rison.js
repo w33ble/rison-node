@@ -57,7 +57,7 @@ rison.uri_ok = {  // ok in url paths and in form query args
         for (var lo = 0; lo < 16; lo++) {
             if (hi+lo === 0) continue;
             var c = String.fromCharCode(hi*16 + lo);
-            if (! /\w|[-_.\/~]/.test(c))
+            if (! /\w|[-_./~]/.test(c))
                 l.push('\\u00' + hi.toString(16) + lo.toString(16));
         }
     }
@@ -102,7 +102,7 @@ rison.not_idstart = '-0123456789';
  *   and quotes " " as "+" instead of "%20"
  */
 rison.quote = function(x) {
-    if (/^[-A-Za-z0-9~!*()_.',:@$\/]*$/.test(x))
+    if (/^[-A-Za-z0-9~!*()_.',:@$/]*$/.test(x))
         return x;
 
     return encodeURIComponent(x)
@@ -133,7 +133,7 @@ rison.quote = function(x) {
     },
     s = {
             array: function (x) {
-                var a = ['!('], b, f, i, l = x.length, v;
+                var a = ['!('], b, i, l = x.length, v;
                 for (i = 0; i < l; i += 1) {
                     v = enc(x[i]);
                     if (typeof v == 'string') {
@@ -170,7 +170,7 @@ rison.quote = function(x) {
                     if (typeof x.__prototype__ === 'object' && typeof x.__prototype__.encode_rison !== 'undefined')
                         return x.encode_rison();
 
-                    var a = ['('], b, f, i, v, ki, ks=[];
+                    var a = ['('], b, i, v, ki, ks=[];
                     for (i in x)
                         ks[ks.length] = i;
                     ks.sort();
@@ -343,8 +343,8 @@ rison.parser.prototype.parse = function (str) {
 };
 
 rison.parser.prototype.error = function (message) {
-    if (typeof(console) != 'undefined')
-        console.log('rison parser error: ', message);
+    if (typeof console !== 'undefined')
+        console.log('rison parser error: ', message); // eslint-disable-line no-console
     this.message = message;
     return undefined;
 };
