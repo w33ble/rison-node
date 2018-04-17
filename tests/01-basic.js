@@ -22,11 +22,14 @@ test('basic object encoding', function(t) {
 });
 
 test('basic number encoding, prop is not quoted', function (t) {
-  t.plan(2);
+  t.plan(3);
 
   var decoded = { 1: 'one' };
-  var encoded = '(\'1\':one)';
+  var encoded = '(1:one)';
 
   t.equal(rison.encode(decoded), encoded);
   t.deepEqual(rison.decode(encoded), decoded);
+
+  // check that quoted values still work
+  t.deepEqual(rison.decode('(\'1\':one)'), decoded);
 });
