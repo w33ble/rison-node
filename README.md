@@ -1,10 +1,18 @@
-rison
-=====
+rison-node
+==========
 
-Rison mirror of now dead site (http://mjtemplate.org/examples/rison.html)
+[![Apache License](https://img.shields.io/badge/license-apache_2.0-a9215a.svg)](https://raw.githubusercontent.com/w33ble/rison-node/master/LICENSE.md)
+[![Build Status](https://img.shields.io/travis/w33ble/rison-node.svg?branch=master)](https://travis-ci.org/w33ble/rison-node)
+[![npm](https://img.shields.io/npm/v/rison-node.svg)](https://www.npmjs.com/package/rison-node)
+[![Project Status](https://img.shields.io/badge/status-stable-brightgreen.svg)](https://nodejs.org/api/documentation.html#documentation_stability_index)
 
+Rison URL Object encoding. Encode infinite-depth javascript objects into a url-friendly string.
+
+This is a fork of https://github.com/Nanonid/rison
 
 # Rison - Compact Data in URIs
+
+Rison mirror of now dead site (http://mjtemplate.org/examples/rison.html)
 
 This page describes _Rison_, a data serialization format optimized for
 compactness in URIs. Rison is a slight variation of JSON that looks vastly
@@ -29,7 +37,7 @@ can also drop it into a `<script>` tag, creating the `rison` global.
 
 Once installed you have the following methods available:
 ```js
-var rison = require('rison');
+var rison = require('rison-node');
 
 rison.encode({any: "json", yes: true});
 rison.encode_array(["A", "B", {supportsObjects: true}]);

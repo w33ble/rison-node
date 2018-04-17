@@ -14,7 +14,7 @@
   "license": "Apache-2.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/w33ble/rison.git"
+    "url": "https://github.com/w33ble/rison-node.git"
   },
   "main": "js/rison.js",
   "files": [
