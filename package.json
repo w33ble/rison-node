@@ -35,7 +35,7 @@
   },
   "scripts": {
     "preversion": "npm run test",
-    "version": "npm run changelog",
+    "postversion": "npm run changelog",
     "changelog": "auto-changelog",
     "test": "npm run lint && tape tests/*.js",
     "lint": "eslint \"js/*.js\" \"tests/*.js\"",
