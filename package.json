@@ -1,6 +1,6 @@
 {
   "name": "rison-node",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "authors": [
     "Nanonid (https://github.com/Nanonid)",
     "Spencer Alger (https://github.com/spalger)",
@@ -30,7 +30,8 @@
   "auto-changelog": {
     "output": "CHANGELOG.md",
     "template": "cltemplate.hbs",
-    "ignoreCommitPattern": "(add|Add).+(author|Author|contributor|Contributor)"
+    "ignoreCommitPattern": "(chore|test)|(add|Add).+(author|Author|contributor|Contributor)",
+    "commitLimit": false
   },
   "scripts": {
     "preversion": "npm run test",
