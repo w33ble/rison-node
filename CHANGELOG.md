@@ -1,5 +1,8 @@
 ### Changelog
 
+#### [v1.0.2](https://github.com/w33ble/rison-node/compare/v1.0.1...v1.0.2) (17 April 2018)
+- docs: proper fork, update repo, add badges [`667fc6c`](https://github.com/w33ble/rison-node/commit/667fc6cd6a3ef4022228dd5de6f1d8a28b153eba)
+
 #### [v1.0.1](https://github.com/w33ble/rison-node/compare/v1.0.0...v1.0.1) (16 April 2018)
 - docs: update readme [`09bbabf`](https://github.com/w33ble/rison-node/commit/09bbabf3959d77bf26caa84f7221b3625992d27c)
 
