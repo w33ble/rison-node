@@ -7,6 +7,7 @@
     "version": "auto-changelog -p && auto-authors && git add CHANGELOG.md AUTHORS.md",
     "test": "npm run lint && tape tests/*.js",
     "lint": "eslint \"js/*.js\" \"tests/*.js\"",
+    "precommit": "lint-staged",
     "prepush": "npm run test"
   },
   "author": "Joe Fleming (https://github.com/w33ble)",
@@ -22,6 +23,10 @@
     "README.md",
     "CHANGELOG.md"
   ],
+  "lint-staged": {
+    "*.{mjs,js}": ["eslint --fix"],
+    "*.{mjs,js,json,css}": ["prettier --write"]
+  },
   "prettier": {
     "singleQuote": true,
     "trailingComma": "es5"
@@ -39,6 +44,7 @@
     "eslint-config-prettier": "^2.9.0",
     "eslint-plugin-prettier": "^2.6.0",
     "husky": "^0.14.3",
+    "lint-staged": "^7.0.4",
     "prettier": "^1.12.0",
     "tape": "^4.2.2"
   }
