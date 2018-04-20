@@ -1,23 +1,21 @@
 {
   "name": "rison-node",
   "version": "1.0.2",
-  "authors": [
-    "Nanonid (https://github.com/Nanonid)",
-    "Spencer Alger (https://github.com/spalger)",
-    "Joe Fleming (https://github.com/w33ble)",
-    "Court Ewing (https://github.com/epixa)",
-    "Jonas Finnemann Jensen (https://github.com/jonasfj)",
-    "Sam Presnal",
-    "bryanrideshark (https://github.com/bryanrideshark)",
-    "Casey Webb (https://github.com/caseyWebb)"
-  ],
+  "main": "js/rison.js",
+  "scripts": {
+    "preversion": "npm run test",
+    "version": "auto-changelog -p && auto-authors && git add CHANGELOG.md AUTHORS.md",
+    "test": "npm run lint && tape tests/*.js",
+    "lint": "eslint \"js/*.js\" \"tests/*.js\"",
+    "prepush": "npm run test"
+  },
+  "author": "Joe Fleming (https://github.com/w33ble)",
   "description": "data serialization format optimized for compactness in URIs",
   "license": "Apache-2.0",
   "repository": {
     "type": "git",
     "url": "https://github.com/w33ble/rison-node.git"
   },
-  "main": "js/rison.js",
   "files": [
     "js",
     "LICENSE.md",
@@ -34,15 +32,8 @@
     "ignoreCommitPattern": "(chore|test)|(add|Add).+(author|Author|contributor|Contributor)",
     "commitLimit": false
   },
-  "scripts": {
-    "preversion": "npm run test",
-    "postversion": "npm run changelog",
-    "changelog": "auto-changelog",
-    "test": "npm run lint && tape tests/*.js",
-    "lint": "eslint \"js/*.js\" \"tests/*.js\"",
-    "prepush": "npm run test"
-  },
   "devDependencies": {
+    "auto-authors": "^0.1.1",
     "auto-changelog": "^1.4.6",
     "eslint": "^4.19.1",
     "eslint-config-prettier": "^2.9.0",
