@@ -1,5 +1,8 @@
 ### Changelog
 
+### [v2.0.0](https://github.com/w33ble/rison-node/compare/v1.0.2...v2.0.0) (30 April 2018)
+- feat: prevent quoting numeric keys [`01e2be2`](https://github.com/w33ble/rison-node/commit/01e2be2fb546fdeea9f68cd5fd9087660cc1802c)
+
 #### [v1.0.2](https://github.com/w33ble/rison-node/compare/v1.0.1...v1.0.2) (17 April 2018)
 - docs: proper fork, update repo, add badges [`667fc6c`](https://github.com/w33ble/rison-node/commit/667fc6cd6a3ef4022228dd5de6f1d8a28b153eba)
 
