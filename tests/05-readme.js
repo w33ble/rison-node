@@ -6,8 +6,12 @@ test('should do what the README says it does', function(t) {
   var decoded = { any: 'json', yes: true };
   var encoded = '(any:json,yes:!t)';
 
-  t.equal(rison.encode(decoded), encoded);
-  t.deepEqual(rison.decode(encoded), decoded);
+  t.equal(rison.encode(decoded), encoded, 'encodes stirng and boolean values');
+  t.deepEqual(
+    rison.decode(encoded),
+    decoded,
+    'decodes stirng and boolean values'
+  );
 });
 
 test('should handle deeply nested objects', function(t) {
@@ -31,8 +35,8 @@ test('should handle deeply nested objects', function(t) {
   };
   var encoded = '(A:(B:(C:(D:E,F:G)),H:(I:(J:K,L:M))))';
 
-  t.equal(rison.encode(decoded), encoded);
-  t.deepEqual(rison.decode(encoded), decoded);
+  t.equal(rison.encode(decoded), encoded, 'encodes deeply nested objects');
+  t.deepEqual(rison.decode(encoded), decoded, 'decodes deeply nested objects');
 });
 
 test('encode_object and decode_object', function(t) {
