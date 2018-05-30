@@ -4,7 +4,7 @@
   "main": "js/rison.js",
   "scripts": {
     "preversion": "npm run test",
-    "version": "auto-changelog -p && auto-authors && git add CHANGELOG.md AUTHORS.md",
+    "version": "npm-auto-version",
     "test": "npm run lint && tape tests/*.js",
     "lint": "eslint \"js/*.js\" \"tests/*.js\"",
     "precommit": "lint-staged",
@@ -24,26 +24,24 @@
     "CHANGELOG.md"
   ],
   "lint-staged": {
-    "*.{mjs,js}": [
-      "eslint --fix"
+    "ignore": [
+      "package.json"
     ],
-    "*.{mjs,js,json,css}": [
-      "prettier --write"
-    ]
+    "linters": {
+      "*.{js,mjs}": [
+        "eslint --fix"
+      ],
+      "*.{js,mjs,json,css}": [
+        "prettier --write"
+      ]
+    }
   },
   "prettier": {
     "singleQuote": true,
     "trailingComma": "es5"
   },
-  "auto-changelog": {
-    "output": "CHANGELOG.md",
-    "template": "cltemplate.hbs",
-    "ignoreCommitPattern": "(chore|test)|(add|Add).+(author|Author|contributor|Contributor)",
-    "commitLimit": false
-  },
   "devDependencies": {
-    "auto-authors": "^0.1.1",
-    "auto-changelog": "^1.4.6",
+    "@w33ble/npm-auto-tools": "*",
     "eslint": "^4.19.1",
     "eslint-config-prettier": "^2.9.0",
     "eslint-plugin-prettier": "^2.6.0",
