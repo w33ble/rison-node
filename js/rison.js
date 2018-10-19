@@ -70,6 +70,7 @@ rison.uri_ok = {  // ok in url paths and in form query args
     //idcrx = new RegExp('[' + rison.not_idchar + ']');
     //console.log('NOT', (idcrx.test(' ')) );
 })();
+
 //rison.not_idchar  = " \t\r\n\"<>[]{}'!=:(),*@$;&";
 rison.not_idchar  = " '!:(),*@$";
 
@@ -114,6 +115,13 @@ rison.quote = function(x) {
         .replace(/%20/g, '+');
 };
 
+/**
+ * this is like decodeURIComponent() but also replaces "+" with " "
+ */
+rison.unquote = function (s) {
+    // eslint-disable-next-line
+    return decodeURIComponent(s.replace(/\+/g, '%20'));
+};
 
 //
 //  based on json.js 2006-04-28 from json.org
@@ -257,8 +265,8 @@ rison.quote = function(x) {
      * Reverses encode_uri
      *
      */
-    rison.decode_uri = function (str) {
-        return rison.decode(decodeURIComponent(str.replace(/\+/g,'%20')));
+    rison.decode_uri = function (s) {
+        return rison.decode(rison.unquote(s));
     };
 
 })();
