@@ -252,6 +252,15 @@ rison.quote = function(x) {
         return rison.quote(s[typeof v](v));
     };
 
+    /**
+     * uri-decode (reversing encode_uri's space -> '+' mapping) then rison-decode a string
+     * Reverses encode_uri
+     *
+     */
+    rison.decode_uri = function (str) {
+        return rison.decode(decodeURIComponent(str.replace(/\+/g,'%20')));
+    };
+
 })();
 
 
