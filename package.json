@@ -5,7 +5,8 @@
   "scripts": {
     "preversion": "npm run test",
     "version": "npm-auto-version",
-    "test": "npm run lint && tape tests/*.js",
+    "test:only": "tape \"tests/*.js\"",
+    "test": "npm run lint && npm run test:only",
     "lint": "eslint \"js/*.js\" \"tests/*.js\"",
     "precommit": "lint-staged",
     "prepush": "npm run test"
