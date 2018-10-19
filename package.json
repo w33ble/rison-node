@@ -26,7 +26,8 @@
   ],
   "lint-staged": {
     "ignore": [
-      "package.json"
+      "package.json",
+      "js/rison.js"
     ],
     "linters": {
       "*.{js,mjs}": [
