@@ -7,3 +7,4 @@
 - Jonas Finnemann Jensen ([jonasfj](https://github.com/jonasfj))
 - Sam Presnal ([spresnal](https://github.com/spresnal))
 - Casey Webb ([caseyWebb](https://github.com/caseyWebb))
+- fabio-looker ([fabio-looker](https://github.com/fabio-looker))
