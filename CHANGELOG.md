@@ -1,5 +1,9 @@
 ### Changelog
 
+#### [v2.1.0](https://github.com/w33ble/rison-node/compare/v2.0.0...v2.1.0) (1 November 2018)
+- feat: add decode_uri method [`#2`](https://github.com/w33ble/rison-node/pull/2)
+- feat: add rison.unquote, use in decode_uri [`41ba487`](https://github.com/w33ble/rison-node/commit/41ba487d05ba623ce8bcde5da96517df61e2e7ff)
+
 ### [v2.0.0](https://github.com/w33ble/rison-node/compare/v1.0.2...v2.0.0) (30 April 2018)
 - **Breaking:** feat: prevent quoting numeric keys [`01e2be2`](https://github.com/w33ble/rison-node/commit/01e2be2fb546fdeea9f68cd5fd9087660cc1802c)
 
@@ -42,4 +46,3 @@
 - Update README.md [`2c2a13a`](https://github.com/w33ble/rison-node/commit/2c2a13ac5fde1671e0d918b1ca8b01de559bca6d)
 - Update README.md [`4092df0`](https://github.com/w33ble/rison-node/commit/4092df0496488d260e6bff82a5d4428e4f21821d)
 - Initial commit [`199d23d`](https://github.com/w33ble/rison-node/commit/199d23df569d6f8de4a5a6f165a9ecc7a5e13ae7)
-
