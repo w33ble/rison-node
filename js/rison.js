@@ -189,7 +189,7 @@ rison.unquote = function (s) {
                             if (b) {
                                 a[a.length] = ',';
                             }
-                            k = isNaN(parseInt(i)) ? s.string(i) : s.number(i)
+                            k = !isFinite(i) || isNaN(parseInt(i)) ? s.string(i) : s.number(i)
                             a.push(k, ':', v);
                             b = true;
                         }

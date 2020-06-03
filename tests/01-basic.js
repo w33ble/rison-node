@@ -29,6 +29,42 @@ test('basic object encoding', function(t) {
   );
 });
 
+test('object with alpha key encoding', function(t) {
+  t.plan(2);
+
+  var decoded = { '1m': 'odd(characters:)' };
+  var encoded = "('1m':'odd(characters:)')";
+
+  t.equal(
+    rison.encode(decoded),
+    encoded,
+    'encodes object with url unsafe characters'
+  );
+  t.deepEqual(
+    rison.decode(encoded),
+    decoded,
+    'decodes object with url unsafe characters'
+  );
+});
+
+test('object with number key encoding', function(t) {
+  t.plan(2);
+
+  var decoded = { 1: 'odd(characters:)' };
+  var encoded = "(1:'odd(characters:)')";
+
+  t.equal(
+    rison.encode(decoded),
+    encoded,
+    'encodes object with url unsafe characters'
+  );
+  t.deepEqual(
+    rison.decode(encoded),
+    decoded,
+    'decodes object with url unsafe characters'
+  );
+});
+
 test('basic number encoding, prop is not quoted', function(t) {
   t.plan(3);
 
