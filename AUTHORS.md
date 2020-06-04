@@ -8,3 +8,4 @@
 - Sam Presnal ([spresnal](https://github.com/spresnal))
 - Casey Webb ([caseyWebb](https://github.com/caseyWebb))
 - fabio-looker ([fabio-looker](https://github.com/fabio-looker))
+- willetvary ([willetvary](https://github.com/willetvary))

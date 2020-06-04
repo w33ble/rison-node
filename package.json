@@ -1,6 +1,6 @@
 {
   "name": "rison-node",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "main": "js/rison.js",
   "scripts": {
     "preversion": "npm run test",
